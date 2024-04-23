@@ -26,6 +26,16 @@ pip install torch-geometric==1.7.2 torch-scatter==2.0.9 torch-sparse==0.6.12
 ```
 For visualization `pytorch3d==0.4.0` is required. The sparse model does not require `torch_geometric`.  
 
+```
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
+
+curl -LO https://github.com/NVIDIA/cub/archive/1.10.0.tar.gz
+tar xzf 1.10.0.tar.gz
+export CUB_HOME=$PWD/cub-1.10.0
+
+pip install -r requirements.txt
+```
+
 ## Data
 ### SMPL Files and Pretrained Model  
 - Download smpl files from the official [website](https://smpl.is.tue.mpg.de/). Unzip and place `basicModel_neutral_lbs_10_207_0_v1.0.0.pkl` in `model_files/`. 
@@ -35,6 +45,10 @@ For visualization `pytorch3d==0.4.0` is required. The sparse model does not requ
 ## Quick Demo
 ```
 python demo.py --img_dir demo/input/* --out_dir demo/output/ --checkpoint checkpoint_sparse.pt --model MeshRegSparse
+```
+
+```
+python demo.py --img_dir 'demo/input/*.png' --out_dir demo/output/ --checkpoint model_files/checkpoint_sparse.pt --model MeshRegSparse
 ```
 
 ## Citation  

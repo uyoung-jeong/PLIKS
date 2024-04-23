@@ -1,0 +1,12 @@
+fvcore
+iopath
+git+https://github.com/facebookresearch/pytorch3d.git@v0.7.0
+vtk==9.1.0
+vedo==2021.0.5
+opencv-python
+torch-geometric==1.7.2
+torch-scatter==2.0.9
+torch-sparse==0.6.12
+chumpy
+numpy==1.23.1
+ultralytics
